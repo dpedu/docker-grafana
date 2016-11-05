@@ -12,4 +12,4 @@ ENV GF_DATABASE_TYPE=sqlite3 GF_DATABASE_PATH=/srv/grafana/db.sqlite GF_SECURITY
 
 USER grafana
 
-ENTRYPOINT grafana
+ENTRYPOINT /usr/sbin/grafana-server
