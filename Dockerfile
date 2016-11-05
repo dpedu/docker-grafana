@@ -1,4 +1,6 @@
-CMD apt-get update && \
+FROM ubuntu:trusty
+
+RUN apt-get update && \
     apt-get install -y wget libfontconfig1 && \
     wget -O /tmp/grafana.deb https://grafanarel.s3.amazonaws.com/builds/grafana_3.1.1-1470047149_amd64.deb && \
     dpkg -i /tmp/grafana.deb && \
