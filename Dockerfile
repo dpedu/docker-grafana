@@ -1,8 +1,8 @@
-FROM ubuntu:trusty
+FROM ubuntu:bionic
 
 RUN apt-get update && \
     apt-get install -y wget libfontconfig1 && \
-    wget -O /tmp/grafana.deb https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_4.2.0_amd64.deb && \
+    wget -O /tmp/grafana.deb https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.2.2_amd64.deb && \
     dpkg -i /tmp/grafana.deb && \
     rm /tmp/grafana.deb
 
@@ -12,4 +12,4 @@ ENV GF_PATHS_DATA=/srv/grafana/data GF_PATHS_PLUGINS=/srv/grafana/plugins GF_DAT
 
 USER grafana
 
-ENTRYPOINT /usr/sbin/grafana-server
+ENTRYPOINT ["/usr/sbin/grafana-server"]
